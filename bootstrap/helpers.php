@@ -1,13 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: john
- * Date: 11/15/18
- * Time: 16:01
- */
-function get_db_config(){
+
+function get_db_config()
+{
     if (getenv('IS_IN_HEROKU')){
-        $url = parse_url(getenv("DATEBASE_URL"));
+        $url = parse_url(getenv("DATABASE_URL"));
 
         return $db_config = [
             'connection' => 'pgsql',
