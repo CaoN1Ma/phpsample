@@ -100,13 +100,13 @@ class UsersController extends Controller
     {
         $view='emails.confirm';
         $data=compact('user');
-        $from='john@aaa.com';
-        $name='John';
+//        $from='john@aaa.com';
+//        $name='John';
         $to=$user->email;
         $subject="哟吼吼，确认邮箱";
 
-        Mail::send($view,$data,function ($message)use($from,$name,$to,$subject){
-        $message->from($from,$name)->to($to)->subject($subject);
+        Mail::send($view,$data,function ($message)use($to,$subject){
+        $message->to($to)->subject($subject);
         });
     }
 
